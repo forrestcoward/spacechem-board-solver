@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceChemSolver", "SpaceChemSolver\SpaceChemSolver.csproj", "{368DB3DF-D1BB-48EC-8A42-BA31DD775217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceChemSolver.Tests", "SpaceChemSolver.Tests\SpaceChemSolver.Tests.csproj", "{951E1DBF-96D5-4440-B7CA-EEC47D421495}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{368DB3DF-D1BB-48EC-8A42-BA31DD775217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{368DB3DF-D1BB-48EC-8A42-BA31DD775217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{368DB3DF-D1BB-48EC-8A42-BA31DD775217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{368DB3DF-D1BB-48EC-8A42-BA31DD775217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951E1DBF-96D5-4440-B7CA-EEC47D421495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951E1DBF-96D5-4440-B7CA-EEC47D421495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951E1DBF-96D5-4440-B7CA-EEC47D421495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951E1DBF-96D5-4440-B7CA-EEC47D421495}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

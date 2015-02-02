@@ -1,0 +1,61 @@
+﻿{
+   "reactor":{
+      "width":10,
+      "height":8,
+      "starts":{
+         "alpha":{
+            "x":5,
+            "y":5,
+            "direction":"left"
+         },
+         "beta":{
+            "x":5,
+            "y":6,
+            "direction":"up"
+         }
+      },
+      "tiles":[
+         {
+            "x":0,
+            "y":3,
+            "instruction":"grab",
+            "waldo":"beta"
+         },
+         {
+             "x":1,
+             "y":2,
+             "direction": "up",
+             "waldo" :  "alpha"
+         }
+      ],
+      "inputs":{
+         "alpha":[
+            {
+               "probability" : 100,
+               "atoms":[
+                  {
+                     "x":2,
+                     "y":2,
+                     "name":"hydrogen"
+                  },
+                  {
+                     "x":2,
+                     "y":3,
+                     "name":"oxygen"
+                  }
+               ],
+               "bonds":[
+                  {
+                     "x1":2,
+                     "y1":2,
+                     "x2":2,
+                     "y2":3,
+                     "strength":1
+                  }
+               ]
+            }
+         ]
+      },
+      "outputs" : { }
+   }
+}

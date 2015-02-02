@@ -1,0 +1,7 @@
+*.suo
+packages/
+SpaceChemSolver/obj
+SpaceChemSolver/bin
+SpaceChemSolver.Tests/obj
+SpaceChemSolver.Tests/bin
+TestResults

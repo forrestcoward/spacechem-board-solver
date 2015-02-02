@@ -1,0 +1,130 @@
+﻿{
+   "type":"object",
+
+   "$schema":"http://json-schema.org/draft-03/schema",
+
+   "required":true,
+
+   "definitions":{  
+      "num":{ "type":"number", "minimum":"0", "required":true },
+      "required-direction":{  "type":"string", "pattern":"up|down|left|right", "required":true },
+      "direction":{ "type":"string", "pattern":"up|down|left|right" },
+      "waldo":{  "type":"string", "pattern":"alpha|beta", "required":true },
+      "instruction":{ "type":"string", "pattern":"in-alpha|out-alpha|in-beta|out-beta|grab|drop|grab-drop|sync|add-bond|remove-bond|rotate-clockwise|rotate-counter-clockwise|empty" },
+      "start":{  
+         "type":"object",
+         "required":true,
+         "properties":{  
+            "direction":{ "$ref":"#/definitions/required-direction" },
+            "x":{ "$ref":"#/definitions/num" },
+            "y":{  "$ref":"#/definitions/num" }
+         }
+      },
+      "atom":{  
+         "type":"object",
+         "required":true,
+         "properties":{  
+            "name":{ "type":"string", "required":false },
+            "x":{ "$ref":"#/definitions/num" },
+            "y":{ "$ref":"#/definitions/num" }
+         }
+      },
+      "atoms" : {  
+        "type":"array",
+        "minitems":"1",
+        "required":true,
+        "items":{ "$ref":"#/definitions/atom" }
+       },
+      "bonds":{  
+         "type":"array",
+         "minitems":"0",
+         "required":true,
+         "items":{  
+            "type":"object",
+            "required":true,
+            "properties":{  
+               "strength":{ "$ref":"#/definitions/num" },
+               "x1":{  "$ref":"#/definitions/num" },
+               "x2":{  "$ref":"#/definitions/num"},
+               "y1":{  "$ref":"#/definitions/num" },
+               "y2":{  "$ref":"#/definitions/num" }
+            }
+         }
+      },
+      "inputs":{  
+         "type":"array",
+         "minitems":"0",
+         "required":false,
+         "items":{  
+            "type":"object",
+            "required":false,
+            "properties":{  
+               "atoms":{ "$ref" : "#definitions/atoms" },
+               "bonds":{ "$ref" : "#definitions/bonds" },
+               "probability":{  "type":"number", "minimum":"0", "maximum":"100","required":true }
+            }
+         }
+      },
+      "output":{  
+         "type":"object",
+         "required":false,
+         "properties":{  
+            "atoms":{ "$ref" : "#definitions/atoms" },
+            "bonds":{ "$ref" : "#definitions/bonds" },
+            "target":{ "$ref" : "#definitions/num" }
+         }
+      }
+   },
+
+   "properties":{
+      "reactor":{
+         "type":"object",
+         "id":"reactor",
+         "required":true,
+         "properties":{
+            "height":{ "$ref": "#/definitions/num" },
+            "width":{ "$ref": "#/definitions/num" },
+            "inputs":{
+               "type":"object",
+               "required":true,
+               "properties":{
+                  "alpha": { "$ref": "#/definitions/inputs" },
+                  "beta" : { "$ref" : "#/definitions/inputs"}
+               }
+            },
+            "outputs":{
+               "type":"object",
+               "required":true,
+               "properties":{
+                  "alpha": { "$ref" : "#/definitions/output" },
+                  "beta": { "$ref" : "#/definitions/output" }
+               }
+            },
+            "starts":{
+               "type":"object",
+               "required":true,
+               "properties":{
+                  "alpha":{ "$ref": "#/definitions/start" },
+                  "beta": { "$ref": "#/definitions/start" }
+               }
+            },
+            "tiles":{
+               "type":"array",
+               "minitems":"0",
+               "required":true,
+               "items":{
+                  "type":"object",
+                  "required":true,
+                  "properties":{
+                     "direction":{ "$ref": "#/definitions/direction" },
+                     "instruction":{ "$ref": "#/definitions/instruction" },
+                     "waldo":{ "$ref": "#/definitions/waldo" },
+                     "x":{ "$ref": "#/definitions/num" },
+                     "y":{ "$ref": "#/definitions/num" }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
